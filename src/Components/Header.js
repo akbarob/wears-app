@@ -30,17 +30,17 @@ export default function Header(){
                     <div className="d-none d-lg-block">
                     <Nav className="me-auto" >
                         
-                        <div class="vr  text-light"></div>
+                        <div className="vr  text-light"></div>
                         <NavItem>
                         <NavLink to='women' className='nav-link text-light  px-3'> WOMEN</NavLink>
                         </NavItem>
-                        <div class="vr  text-danger"></div>
+                        <div className="vr  text-danger"></div>
                         
                         
                         <NavItem>
                             <NavLink to='men' className='nav-link text-light  px-3'> MEN</NavLink>
                         </NavItem>
-                        <div class="vr text-light" ></div>
+                        <div className="vr text-light" ></div>
 
                         <div className="p-2 mx-5 rounded-pill border bg-light border-0 search col-10 d--block">
                                 <InputGroup>
@@ -59,7 +59,7 @@ export default function Header(){
                     </div>
 
                     
-                    <Nav className="ms-auto px-5">
+                    <Nav className="ms-auto">
                         <NavItem className="d-lg-none">
                             <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25} onClick={toggleModal}/></NavLink>
                         </NavItem>
