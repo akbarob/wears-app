@@ -8,7 +8,7 @@
     ;
 }
 .peen{
-    background-color: rgb(229, 236, 234) !important;
+    background-color: rgba(229, 236, 234, 0.439) !important;
 }
 
 .accordion-button:focus {

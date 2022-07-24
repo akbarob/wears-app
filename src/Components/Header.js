@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ListGroup,Navbar,NavbarBrand, Nav, NavItem,Container,InputGroup ,FormControl, Offcanvas, OffcanvasHeader, OffcanvasBody,OffcanvasTitle,Button, Accordion} from "react-bootstrap";
-import { Search,Person,Heart,Handbag,List, Messenger, Box2, QuestionCircle} from "react-bootstrap-icons";
+import { ListGroup,Navbar,NavbarBrand, Nav, NavItem,Container,InputGroup ,FormControl, Offcanvas, OffcanvasHeader, OffcanvasBody,OffcanvasTitle,Button, Accordion, Row, Col} from "react-bootstrap";
+import { Search,Person,Heart,Handbag,List, Messenger, Box2, QuestionCircle, Vr} from "react-bootstrap-icons";
 import {NavLink, Link} from "react-router-dom";
 
 export default function Header(){
@@ -23,9 +23,11 @@ export default function Header(){
                         
                         <div class="vr  text-light"></div>
                         <NavItem>
-                        <NavLink to='women' className='nav-link text-light  px-3 '> WOMEN</NavLink>
+                        <NavLink to='women' className='nav-link text-light  px-3'> WOMEN</NavLink>
                         </NavItem>
                         <div class="vr  text-light"></div>
+                        
+                        
                         <NavItem>
                             <NavLink to='men' className='nav-link text-light  px-3'> MEN</NavLink>
                         </NavItem>
@@ -48,18 +50,18 @@ export default function Header(){
                     </div>
 
                     
-                    <Nav className="ms-auto px-3">
+                    <Nav className="ms-auto">
                         <NavItem className="d-lg-none">
-                            <NavLink to='women' className='nav-link text-light my-2 px-3 '> <Search size={25}/></NavLink>
+                            <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='women' className='nav-link text-light my-2 px-3 '> <Person size={25}/></NavLink>
+                            <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Person size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light my-2 px-3'> <Heart size={25}/></NavLink>
+                            <NavLink to='men' className='nav-link text-light my-2 px-2'> <Heart size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light my-2 px-3'> <Handbag size={25}/></NavLink>
+                            <NavLink to='men' className='nav-link text-light my-2 px-2'> <Handbag size={25}/></NavLink>
                         </NavItem>
                     </Nav> 
                         
@@ -84,8 +86,13 @@ export default function Header(){
                 </OffcanvasTitle>
                 </OffcanvasHeader>
                 <OffcanvasBody>
-                Some text as placeholder. In real life you can have the elements you
-                have chosen. Like, text, images, lists, etc.
+                    <div className="text-center justify">
+                        <Row>
+                            <Col xs={3}>Sign in</Col>
+                            <div className="vr text-danger"></div>
+                            <Col xs={3}>Join</Col>
+                        </Row>
+                    </div>
                 <Nav defaultActiveKey="/home" className="flex-column peen">
                     <Nav.Link href="/home" className=' nav-link text-secondary' ><Person/> My Account</Nav.Link>
                     <Nav.Link eventKey="link-1" className=' nav-link text-secondary'><Box2/> My Orders</Nav.Link>
@@ -94,29 +101,42 @@ export default function Header(){
                 </Nav>
                 <Accordion  className="my-3" flush>
                     <Accordion.Item eventKey="0" className="shadown-none">
-                        <Accordion.Header>Accordion Item #1</Accordion.Header>
-                        <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        
+                        <Accordion.Header>Help & Information</Accordion.Header>
+                        <Accordion.Body className='p-0'>
+                            <Nav defaultActiveKey="/home" className="flex-column peen">
+                                <Nav.Link href="/home" className=' nav-link text-secondary' >Help</Nav.Link>
+                                <Nav.Link eventKey="link-1" className=' nav-link text-secondary'>Track order</Nav.Link>
+                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Delivery and Returns</Nav.Link>
+                            </Nav>
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
-                        <Accordion.Header>Accordion Item #2</Accordion.Header>
-                        <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        <Accordion.Header>About WEARS</Accordion.Header>
+                        <Accordion.Body className='p-0'>
+                            <Nav defaultActiveKey="/home" className="flex-column peen">
+                                <Nav.Link href="/home" className=' nav-link text-secondary' >About us</Nav.Link>
+                                <Nav.Link eventKey="link-1" className=' nav-link text-secondary'>Careers at WEARS</Nav.Link>
+                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Coporate Responsibility</Nav.Link>
+                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Investors' site</Nav.Link>
+                            </Nav>
                         
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="2">
-                        <Accordion.Header>Accordion Item #2</Accordion.Header>
-                        <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        
+                        <Accordion.Header>More From WEARS</Accordion.Header>
+                        <Accordion.Body className='p-0'>
+                            <Nav defaultActiveKey="/home" className="flex-column peen">
+                                <Nav.Link href="/home" className=' nav-link text-secondary' >Mobile and WEARS appss</Nav.Link>
+                                <Nav.Link eventKey="link-1" className=' nav-link text-secondary'>WEARS Marketplace</Nav.Link>
+                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Gift Vouchers</Nav.Link>
+                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Black Friday</Nav.Link>
+                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>WEARS x Thrift+</Nav.Link>
+                            </Nav>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
                 </OffcanvasBody>
-
+                    <div className="footer py-3 text-center brand text-dark"> ©️ wears 2022 ™</div>
             </Offcanvas>
         </div>
     )
