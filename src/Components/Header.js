@@ -1,12 +1,21 @@
 import { useState } from "react";
-import { ListGroup,Navbar,NavbarBrand, Nav, NavItem,Container,InputGroup ,FormControl, Offcanvas, OffcanvasHeader, OffcanvasBody,OffcanvasTitle,Button, Accordion, Row, Col} from "react-bootstrap";
+import { ListGroup,Navbar,NavbarBrand, Nav, NavItem, NavDropdown,Container,InputGroup ,FormControl, Offcanvas, OffcanvasHeader, OffcanvasBody,OffcanvasTitle,Button, Accordion, Row, Col, Modal} from "react-bootstrap";
 import { Search,Person,Heart,Handbag,List, Messenger, Box2, QuestionCircle, Vr} from "react-bootstrap-icons";
 import {NavLink, Link} from "react-router-dom";
+import Offnavi from "./offnavi";
 
 export default function Header(){
+
+
     const [showOff, setShowOff] = useState(false)
     function handleOffcanvasNav(){
         setShowOff(prevState => !prevState)
+    }
+
+
+    const [showModal, setShowModal] = useState(false)
+    function toggleModal(){
+        setShowModal(prevState => !prevState)
     }
     return(
         <div>
@@ -25,7 +34,7 @@ export default function Header(){
                         <NavItem>
                         <NavLink to='women' className='nav-link text-light  px-3'> WOMEN</NavLink>
                         </NavItem>
-                        <div class="vr  text-light"></div>
+                        <div class="vr  text-danger"></div>
                         
                         
                         <NavItem>
@@ -50,18 +59,34 @@ export default function Header(){
                     </div>
 
                     
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto px-5">
                         <NavItem className="d-lg-none">
-                            <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25}/></NavLink>
+                            <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25} onClick={toggleModal}/></NavLink>
                         </NavItem>
+                        <NavDropdown
+                        id='profile-dropdown'
+                        menuVariant="light"
+                        title={<Person size={27} className='text-light '/>}
+                        className='nav-link px-2 d-none d-lg-block'
+                        >
+                            <NavDropdown.Item href="#action/3.1"> <Person className="mx-2"/>My account</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">
+                            <Box2 className="mx-2"/>  My orders
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3"> <QuestionCircle className="mx-2"/>Return Information</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.4">
+                            <Messenger className="mx-2"/>Contact Prefrence
+                            </NavDropdown.Item>
+                            
+                        </NavDropdown>
                         <NavItem>
-                            <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Person size={25}/></NavLink>
+                            <NavLink to='men' className='nav-link text-light my-2 px-2 d-lg-none' > <Person size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink to='men' className='nav-link text-light my-2 px-2'> <Heart size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light my-2 px-2'> <Handbag size={25}/></NavLink>
+                            <NavLink to='men' className='nav-link text-light my-2 px-3'> <Handbag size={25}/></NavLink>
                         </NavItem>
                     </Nav> 
                         
@@ -69,75 +94,36 @@ export default function Header(){
                 
             </Navbar>
 
-            <Offcanvas show={showOff} onHide={handleOffcanvasNav} className="bg-grey">
-                <OffcanvasHeader closeButton>
-                <OffcanvasTitle>
-                <Nav justify variant="tabs" defaultActiveKey="/women">
-                    <NavItem>
-                        <NavLink to='/women' className='nav-link text-dark mx-3' eventKey="link-1"> WOMEN</NavLink>
-                    </NavItem>
-                    <div class="vr  text-light"></div>
-                    <NavItem>
-                        <NavLink to='/men' className='nav-link text-dark  mx-3' eventKey="link-2"> MEN</NavLink>
-                    </NavItem>
-                    
-                </Nav>
-                    
-                </OffcanvasTitle>
-                </OffcanvasHeader>
-                <OffcanvasBody>
-                    <div className="text-center justify">
-                        <Row>
-                            <Col xs={3}>Sign in</Col>
-                            <div className="vr text-danger"></div>
-                            <Col xs={3}>Join</Col>
-                        </Row>
-                    </div>
-                <Nav defaultActiveKey="/home" className="flex-column peen">
-                    <Nav.Link href="/home" className=' nav-link text-secondary' ><Person/> My Account</Nav.Link>
-                    <Nav.Link eventKey="link-1" className=' nav-link text-secondary'><Box2/> My Orders</Nav.Link>
-                    <Nav.Link eventKey="link-2" className=' nav-link text-secondary'><QuestionCircle/> Return Information</Nav.Link>
-                    <Nav.Link eventKey="link-3" className=' nav-link text-secondary'> <Messenger/> Contact Prefrence</Nav.Link>
-                </Nav>
-                <Accordion  className="my-3" flush>
-                    <Accordion.Item eventKey="0" className="shadown-none">
-                        <Accordion.Header>Help & Information</Accordion.Header>
-                        <Accordion.Body className='p-0'>
-                            <Nav defaultActiveKey="/home" className="flex-column peen">
-                                <Nav.Link href="/home" className=' nav-link text-secondary' >Help</Nav.Link>
-                                <Nav.Link eventKey="link-1" className=' nav-link text-secondary'>Track order</Nav.Link>
-                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Delivery and Returns</Nav.Link>
-                            </Nav>
-                        </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="1">
-                        <Accordion.Header>About WEARS</Accordion.Header>
-                        <Accordion.Body className='p-0'>
-                            <Nav defaultActiveKey="/home" className="flex-column peen">
-                                <Nav.Link href="/home" className=' nav-link text-secondary' >About us</Nav.Link>
-                                <Nav.Link eventKey="link-1" className=' nav-link text-secondary'>Careers at WEARS</Nav.Link>
-                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Coporate Responsibility</Nav.Link>
-                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Investors' site</Nav.Link>
-                            </Nav>
-                        
-                        </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="2">
-                        <Accordion.Header>More From WEARS</Accordion.Header>
-                        <Accordion.Body className='p-0'>
-                            <Nav defaultActiveKey="/home" className="flex-column peen">
-                                <Nav.Link href="/home" className=' nav-link text-secondary' >Mobile and WEARS appss</Nav.Link>
-                                <Nav.Link eventKey="link-1" className=' nav-link text-secondary'>WEARS Marketplace</Nav.Link>
-                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Gift Vouchers</Nav.Link>
-                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>Black Friday</Nav.Link>
-                                <Nav.Link eventKey="link-2" className=' nav-link text-secondary'>WEARS x Thrift+</Nav.Link>
-                            </Nav>
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-                </OffcanvasBody>
-                    <div className="footer py-3 text-center brand text-dark"> ©️ wears 2022 ™</div>
-            </Offcanvas>
+            <Offnavi show={showOff} onHide={handleOffcanvasNav} />
+
+            <Modal show={showModal} onHide={toggleModal}>
+                <Modal.Body>
+                    <InputGroup>
+                        <FormControl
+                        autoFocus
+                            size="sm"
+                            placeholder="search for items and brands"
+                            aria-label="search for items and brands"
+                            className="bg-light border-0 shadow-none col-12"/>
+                            <InputGroup.Text className="bg-light border-0">
+                            <Search size={25}/>
+                            </InputGroup.Text>
+                    </InputGroup>
+                </Modal.Body>
+                <Row className="pb-2">
+                    <Col className="offset-8">
+                        <Button size="sm" variant="outline-primary" onClick={toggleModal}>
+                        Search
+                        </Button>
+                    </Col>
+                
+                <Col>
+                    <Button size="sm" variant="outline-danger" onClick={toggleModal}>
+                        Cancel
+                    </Button>
+                </Col>
+                </Row>
+            </Modal>
         </div>
     )
 }
