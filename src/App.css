@@ -39,3 +39,16 @@
     background-image: url('/public/images/second-hero-2.png') !important;
     background-color: #a91616 !important;
 }
+
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+        
+      opacity: 0;
+      color: #a91616;
+    }
+  }
