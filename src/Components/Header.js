@@ -32,13 +32,13 @@ export default function Header(){
                         
                         <div className="vr  text-light"></div>
                         <NavItem>
-                        <NavLink to='women' className='nav-link text-light  px-3'> WOMEN</NavLink>
+                        <NavLink to='/women' className='nav-link text-light  px-3'> WOMEN</NavLink>
                         </NavItem>
                         <div className="vr  text-danger"></div>
                         
                         
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light  px-3'> MEN</NavLink>
+                            <NavLink to='/men' className='nav-link text-light  px-3'> MEN</NavLink>
                         </NavItem>
                         <div className="vr text-light" ></div>
 
@@ -59,7 +59,7 @@ export default function Header(){
                     </div>
 
                     
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto me-5">
                         <NavItem className="d-lg-none">
                             <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25} onClick={toggleModal}/></NavLink>
                         </NavItem>
@@ -111,7 +111,7 @@ export default function Header(){
                     </InputGroup>
                 </Modal.Body>
                 <Row className="pb-2">
-                    <Col className="offset-8">
+                    <Col className="offset-6">
                         <Button size="sm" variant="outline-primary" onClick={toggleModal}>
                         Search
                         </Button>

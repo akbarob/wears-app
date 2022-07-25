@@ -11,11 +11,12 @@ function RenderItemCards(props){
         <div  className="col-12 col-md-5 col-lg-4 mx-auto mt-5">
             <Card style={{ width: '15rem',  }} className='mx-auto border-0'>
                 <Card.Img variant="top" src={props.girl.image} alt={props.girl.name}/>
-                <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger ">{props.girl.label}</Badge></Card.ImgOverlay>
+                <Card.ImgOverlay> <Badge className="rounded-pill bg-transparent text-danger  position-absolute top-1 start-0">{props.girl.label}</Badge></Card.ImgOverlay>
                 <Card.Body>
                     <Card.Title>{props.girl.name}</Card.Title>
                     <Card.Text>
                     {props.girl.description}
+                    <p><strong className="text-danger">{props.girl.price}</strong> <span className="text-decoration-line-through text-muted">{props.girl.oldprice}</span></p>
                     </Card.Text>
                 </Card.Body>
             </Card>

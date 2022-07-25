@@ -9,11 +9,11 @@ export default function Offnavi(props){
                 <OffcanvasTitle>
                 <Nav justify variant="tabs" defaultActiveKey="/women">
                     <NavItem>
-                        <NavLink to='/women' className='nav-link text-dark mx-3' eventKey="link-1"> WOMEN</NavLink>
+                        <NavLink to='/women' className='nav-link  mx-3' eventKey="link-1"> WOMEN</NavLink>
                     </NavItem>
                     <div class="vr  text-light"></div>
                     <NavItem>
-                        <NavLink to='/men' className='nav-link text-dark  mx-3' eventKey="link-2"> MEN</NavLink>
+                        <NavLink to='/men' className='nav-link   mx-3' eventKey="link-2"> MEN</NavLink>
                     </NavItem>
                     
                 </Nav>

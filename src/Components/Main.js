@@ -1,8 +1,7 @@
 import Header from "./Header"
 import Header2 from "./header2"
-import FirstS from "./firstsection"
-import Second2 from "./second2"
-import Container from "react-bootstrap/esm/Container"
+
+import AnimatedRoutes from "./AnimatedRoutes"
 import { Component } from "react"
 import { connect } from "react-redux/es/exports"
 import { fetchwomen } from "../redux/ActionCreators"
@@ -27,13 +26,11 @@ class Main extends Component{
             <div>
                <Header/>
                <Header2/>
-               <Container>
-               <FirstS
+               <AnimatedRoutes
                Women={this.props.Women.Women}
                errMess={this.props.Women.errMess}
                isLoading={this.props.Women.isLoading}/>
-               <Second2/>
-               </Container>
+               
             </div>
         )
 
