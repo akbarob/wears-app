@@ -1,6 +1,7 @@
 import Header from "./Header"
 import Header2 from "./header2"
 import FirstS from "./firstsection"
+import Second2 from "./second2"
 import Container from "react-bootstrap/esm/Container"
 import { Component } from "react"
 import { connect } from "react-redux/es/exports"
@@ -28,7 +29,10 @@ class Main extends Component{
                <Header2/>
                <Container>
                <FirstS
-               Women={this.props.Women.Women}/>
+               Women={this.props.Women.Women}
+               errMess={this.props.Women.errMess}
+               isLoading={this.props.Women.isLoading}/>
+               <Second2/>
                </Container>
             </div>
         )

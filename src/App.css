@@ -33,3 +33,9 @@
 
 
 }
+.sec2{
+    background-position: center;
+    background-size: cover;
+    background-image: url('/public/images/second-hero-2.png') !important;
+    background-color: #a91616 !important;
+}
