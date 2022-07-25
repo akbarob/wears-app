@@ -1,10 +1,12 @@
 import Header from "./Header"
 import Header2 from "./header2"
+import ItemDetails from "./ItemDetails"
 
 import AnimatedRoutes from "./AnimatedRoutes"
 import { Component } from "react"
 import { connect } from "react-redux/es/exports"
 import { fetchwomen, fetchmen, } from "../redux/ActionCreators"
+import { useParams } from "react-router-dom"
 
 
 
@@ -28,6 +30,20 @@ class Main extends Component{
     }
 
     render(){
+
+        const ItemWithId = () =>{
+            const{itemId} = useParams();
+            return(
+                <ItemDetails
+                woman={this.props.Women.Women.filter(lady => lady.id === parseInt(itemId,10))}
+                errMess={this.props.Women.errMess}
+                isLoading={this.props.Women.isLoading}
+                omo={this.props.Men.Men.filter(omo => omo.id === parseInt(itemId,10))}
+                errMessMen={this.props.Men.errMess}
+                isLoadingMen={this.props.Men.isLoading}/>
+
+            )
+        }
         return(
             <div>
                <Header/>
@@ -38,7 +54,8 @@ class Main extends Component{
                isLoading={this.props.Women.isLoading}
                Men={this.props.Men.Men}
                errMessMen={this.props.Men.errMess}
-               isLoadingMen={this.props.Men.isLoading}/>
+               isLoadingMen={this.props.Men.isLoading}
+               ItemWithId={ItemWithId}/>
                
             </div>
         )

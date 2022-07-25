@@ -21,6 +21,7 @@ export default function AnimatedRoutes(props){
                      errMess={props.errMess}
                      isLoading={props.isLoading}
                 />}/>
+                <Route path='men/:itemId' element={<props.ItemWithId/>}/>
                 <Route path='*' element={<Navigate to='/'/>}/>
 
 
