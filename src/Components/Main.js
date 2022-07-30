@@ -1,6 +1,7 @@
 import Header from "./Header"
 import Header2 from "./header2"
-import ItemDetails from "./ItemDetails"
+import ItemDetails from "./Men/ItemDetails"
+import ItemDetailsW from "./Women/itemDetailsW"
 
 import AnimatedRoutes from "./AnimatedRoutes"
 import { Component } from "react"
@@ -35,14 +36,26 @@ class Main extends Component{
             const{itemId} = useParams();
 
             return(
+                <>
                 <ItemDetails
-                woman={this.props.Women.Women.filter(lady => lady.id === parseInt(itemId,10))}
-                errMess={this.props.Women.errMess}
-                isLoading={this.props.Women.isLoading}
                 omo={this.props.Men.Men.filter(omo => omo.id === parseInt(itemId,10)) [0]}
                 errMessMen={this.props.Men.errMess}
                 isLoadingMen={this.props.Men.isLoading}/>
+                </>
+                
+            )
+        }
+        const ItemWithIdW = () =>{
+            const{itemId} = useParams();
 
+            return(
+                <>
+                <ItemDetailsW
+                lady={this.props.Women.Women.filter(lady => lady.id === parseInt(itemId,10)) [0]}
+                errMess={this.props.Women.errMess}
+                isLoading={this.props.Women.isLoading}/>
+                </>
+                
             )
         }
         return(
@@ -56,7 +69,8 @@ class Main extends Component{
                Men={this.props.Men.Men}
                errMessMen={this.props.Men.errMess}
                isLoadingMen={this.props.Men.isLoading}
-               ItemWithId={ItemWithId}/>
+               ItemWithId={ItemWithId}
+               ItemWithIdW={ItemWithIdW}/>
                
             </div>
         )

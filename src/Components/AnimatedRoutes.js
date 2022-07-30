@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { Navigate, Route, Routes,useParams, useLocation} from 'react-router-dom'
 import Men from './Men/men';
-import Women from './women';
+import Women from './Women/women';
 
 export default function AnimatedRoutes(props){
     const location = useLocation();
@@ -23,6 +23,8 @@ export default function AnimatedRoutes(props){
                      isLoading={props.isLoading}
                 />}/>
                 <Route path='men/:itemId' element={<props.ItemWithId/>}/>
+                <Route path='women/:itemId' element={<props.ItemWithIdW/>}/>
+
                 <Route path='*' element={<Navigate to='/'/>}/>
 
 

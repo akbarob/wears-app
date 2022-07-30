@@ -1,6 +1,7 @@
 import * as ActionTypes from "./ActionTypes";
 import { baseUrl } from "../shared/baseUrl";
 
+
 // WOMEN
 export const fetchwomen= () => (dispatch) => {
     dispatch(womenLoading(true));
@@ -40,24 +41,28 @@ export const addWomen = (women) => ({
 //MEN
 export const fetchmen= () => (dispatch) => {
   dispatch(menLoading(true));
-  return fetch(baseUrl + 'men')
-  .then(response =>{
-      if(response.ok){
-        return response
-      }
-      else {
-        var error = new Error('Error ' + response.status + ':' + response.statusText)
-        error.response = response
-        throw error
-      }
-    },
-    error => {
-      var errmess = new Error(error.message)
-      throw errmess
-    })
-    .then(response => response.json())
-    .then(men => dispatch(addMen(men)))
-    .catch(error => dispatch(menFailed(error.message)))
+  setTimeout(function(){
+        return fetch(baseUrl + 'men')
+      .then(response =>{
+          if(response.ok){
+            return response
+          }
+          else {
+            var error = new Error('Error ' + response.status + ':' + response.statusText)
+            error.response = response
+            throw error
+          }
+        },
+        error => {
+          var errmess = new Error(error.message)
+          throw errmess
+        })
+        .then(response => response.json())
+        .then(men => dispatch(addMen(men)))
+        .catch(error => dispatch(menFailed(error.message)))
+    
+ }, 2000)
+  
 
 }
 export const menLoading = () => ({
