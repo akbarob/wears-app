@@ -59,7 +59,7 @@ export default function Header(){
                     </div>
 
                     
-                    <Nav className="ms-auto me-5">
+                    <Nav className="ms-auto me-4">
                         <NavItem className="d-lg-none">
                             <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25} onClick={toggleModal}/></NavLink>
                         </NavItem>

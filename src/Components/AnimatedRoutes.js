@@ -5,6 +5,7 @@ import Women from './women';
 
 export default function AnimatedRoutes(props){
     const location = useLocation();
+
     return(
         <AnimatePresence>
             <Routes  location={location} key={location.pathname}>

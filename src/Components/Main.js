@@ -33,12 +33,13 @@ class Main extends Component{
 
         const ItemWithId = () =>{
             const{itemId} = useParams();
+
             return(
                 <ItemDetails
                 woman={this.props.Women.Women.filter(lady => lady.id === parseInt(itemId,10))}
                 errMess={this.props.Women.errMess}
                 isLoading={this.props.Women.isLoading}
-                omo={this.props.Men.Men.filter(omo => omo.id === parseInt(itemId,10))}
+                omo={this.props.Men.Men.filter(omo => omo.id === parseInt(itemId,10)) [0]}
                 errMessMen={this.props.Men.errMess}
                 isLoadingMen={this.props.Men.isLoading}/>
 
