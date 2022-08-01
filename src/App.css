@@ -31,16 +31,29 @@
 }
 .nav2{
     background-color: #525050;
+    margin-top: 70px;
+    margin-bottom: 2px;
 
 
 }
 .sec2{
-    background-position: center;
+    background-position-y: 1%;
     background-size: cover;
     background-image: url(https://wears-server.herokuapp.com/images/second-hero-2.png) !important;
     background-color: #a91616 !important;
 }
+.footer-link{
+    text-decoration: none;
+    color: inherit;
+    
+    
+}
+.footer{
+    padding: 2rem 3rem;
+    background-color: #525050;
+    color: aliceblue;
 
+}
 
 .blink_me {
     animation: blinker 1s linear infinite;

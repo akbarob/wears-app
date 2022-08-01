@@ -52,7 +52,7 @@ else
             <h3>EXTRA 20% off!!!</h3>
             <h4>ALREADY UP TO 80% OFF</h4>
             <h6>With code : <strong className="blink_me text-success">akbarob</strong></h6>
-            <div className="row">
+            <div className="row pb-5">
               {women}
             </div>
 

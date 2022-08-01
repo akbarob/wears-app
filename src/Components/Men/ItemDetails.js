@@ -17,11 +17,11 @@ function RenderInfo(props){
     return(
         <div className="container">
             <h4>{props.omo.description}</h4>
-            <div className='row  mt-5'> 
+            <div className='row  mt-3'> 
                 <h6 className='col-auto text-decoration-line-through text-muted'>{props.omo.oldprice}</h6> <h6  className='col-auto text-danger'>{props.omo.price}</h6>
             </div>
-            <div className='row'>
-                <Form.Select aria-label="Default select example" className='shadow-none mt-5 col-5'>
+            <div className='text-center'>
+                <Form.Select aria-label=" select size" className='mx-auto shadow-none mt-3 col-auto'>
                 <option>Select size</option>
                 <option value="1">Small (s)</option>
                 <option value="2">Medium (M)</option>
@@ -30,7 +30,8 @@ function RenderInfo(props){
                 <option value="3">Extra-Extra-Large (XXL)</option>
 
                 </Form.Select>
-            <Button variant="success" className=' mx-auto mt-5 px-auto col-5'> <HandbagFill size={25} /> Add to cart</Button>
+                    <Button variant="success" className='mx-auto mt-5 px-auto col-5'>          <HandbagFill size={25} /> Add to cart
+                    </Button>
 
             </div>
             
@@ -60,12 +61,12 @@ export default function ItemDetails(props){
 
             <div className='container'>
                 <div className='row justify-content-center' >
-                    <div className=' mx-auto col-md-5'>
+                    <div className=' mx-auto col-md-6'>
                         <RenderItem 
                         omo={props.omo}  />
 
                     </div>
-                    <div className=' offset-1 col-md-5 mt-5'>
+                    <div className=' mx-auto col-md-6  mt-5'>
                         <RenderInfo
                         omo={props.omo}  />
                     </div>

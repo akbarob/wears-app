@@ -54,7 +54,7 @@ else
             <h6>With code : <strong className="blink_me text-success">akbarob</strong></h6>
 
             
-            <div className="row">
+            <div className="row pb-5">
               {men}
             </div>
 

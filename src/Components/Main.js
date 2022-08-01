@@ -1,5 +1,6 @@
 import Header from "./Header"
 import Header2 from "./header2"
+import Footer from "./footer"
 import ItemDetails from "./Men/ItemDetails"
 import ItemDetailsW from "./Women/itemDetailsW"
 
@@ -71,6 +72,7 @@ class Main extends Component{
                isLoadingMen={this.props.Men.isLoading}
                ItemWithId={ItemWithId}
                ItemWithIdW={ItemWithIdW}/>
+               <Footer/>
                
             </div>
         )

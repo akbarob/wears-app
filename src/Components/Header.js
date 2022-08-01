@@ -19,7 +19,7 @@ export default function Header(){
     }
     return(
         <div>
-            <Navbar bg='dark' >
+            <Navbar bg='dark' fixed="top" >
                 
                     <Button variant="dark" onClick={handleOffcanvasNav} className='d-lg-none'>
                         <List size={30}/>
@@ -61,9 +61,10 @@ export default function Header(){
                     
                     <Nav className="ms-auto me-4">
                         <NavItem className="d-lg-none">
-                            <NavLink to='women' className='nav-link text-light my-2 px-2 '> <Search size={25} onClick={toggleModal}/></NavLink>
+                         <Search size={40} onClick={toggleModal} className='nav-link text-light my-2 px-2 '/>
                         </NavItem>
                         <NavDropdown
+                        color="light"
                         id='profile-dropdown'
                         menuVariant="light"
                         title={<Person size={27} className='text-light '/>}
@@ -80,13 +81,13 @@ export default function Header(){
                             
                         </NavDropdown>
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light my-2 px-2 d-lg-none' > <Person size={25}/></NavLink>
+                            <NavLink to='#' className='nav-link text-light my-2 px-2 d-lg-none' > <Person size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light my-2 px-2'> <Heart size={25}/></NavLink>
+                            <NavLink to='#' className='nav-link text-light my-2 px-2'> <Heart size={25}/></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to='men' className='nav-link text-light my-2 px-3'> <Handbag size={25}/></NavLink>
+                            <NavLink to='#' className='nav-link text-light my-2 px-3'> <Handbag size={25}/></NavLink>
                         </NavItem>
                     </Nav> 
                         
