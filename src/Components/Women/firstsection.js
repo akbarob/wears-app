@@ -47,7 +47,7 @@ else if (props.errMess){
 else
 
     return(
-        <div className="text-center bg-light">
+        <div className="text-center bg-light header">
             <Button >SALE</Button>
             <h3>EXTRA 20% off!!!</h3>
             <h4>ALREADY UP TO 80% OFF</h4>

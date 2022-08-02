@@ -19,7 +19,7 @@ export default function Header(){
     }
     return(
         <div>
-            <Navbar bg='dark' fixed="top" >
+            <Navbar bg='dark' fixed="top">
                 
                     <Button variant="dark" onClick={handleOffcanvasNav} className='d-lg-none'>
                         <List size={30}/>

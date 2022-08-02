@@ -3,6 +3,7 @@ import Header2 from "./header2"
 import Footer from "./footer"
 import ItemDetails from "./Men/ItemDetails"
 import ItemDetailsW from "./Women/itemDetailsW"
+import Home from "./home"
 
 import AnimatedRoutes from "./AnimatedRoutes"
 import { Component } from "react"
@@ -32,6 +33,16 @@ class Main extends Component{
     }
 
     render(){
+        const HomePage =() => {
+            return(
+                <>
+                    <Home
+                        Men={this.props.Men.Men}
+                        Women={this.props.Women.Women}
+                    />
+                </>
+            )
+        }
 
         const ItemWithId = () =>{
             const{itemId} = useParams();
@@ -61,17 +72,20 @@ class Main extends Component{
         }
         return(
             <div>
-               <Header/>
+               <Header />
                <Header2/>
                <AnimatedRoutes
-               Women={this.props.Women.Women}
-               errMess={this.props.Women.errMess}
-               isLoading={this.props.Women.isLoading}
-               Men={this.props.Men.Men}
-               errMessMen={this.props.Men.errMess}
-               isLoadingMen={this.props.Men.isLoading}
-               ItemWithId={ItemWithId}
-               ItemWithIdW={ItemWithIdW}/>
+                    Women={this.props.Women.Women}
+                    errMess={this.props.Women.errMess}
+                    isLoading={this.props.Women.isLoading}
+                    Men={this.props.Men.Men}
+                    errMessMen={this.props.Men.errMess}
+                    isLoadingMen={this.props.Men.isLoading}
+                    ItemWithId={ItemWithId}
+                    ItemWithIdW={ItemWithIdW}
+                    HomePage={HomePage}
+               />
+               
                <Footer/>
                
             </div>

@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Navigate, Route, Routes,useParams, useLocation} from 'react-router-dom'
 import Men from './Men/men';
 import Women from './Women/women';
+import Home from './home';
 
 export default function AnimatedRoutes(props){
     const location = useLocation();
@@ -9,10 +10,7 @@ export default function AnimatedRoutes(props){
     return(
         <AnimatePresence>
             <Routes  location={location} key={location.pathname}>
-                <Route path='/' element={<Men
-                Men={props.Men}
-                errMess={props.errMessMen}
-                isLoading={props.isLoadingMen}/>}/>
+                <Route path='/' element={<props.HomePage/>}/>
                 <Route path='/men' element={<Men
                     Men={props.Men}
                     errMess={props.errMessMen}
