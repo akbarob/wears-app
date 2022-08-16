@@ -7,13 +7,13 @@ export default function Offnavi(props){
         <Offcanvas show={props.show} onHide={props.onHide} className="bg-grey">
                 <OffcanvasHeader closeButton>
                 <OffcanvasTitle>
-                <Nav justify variant="tabs" defaultActiveKey="/women">
+                <Nav variant="pills" defaultActiveKey="/women" className="">
                     <NavItem>
-                        <NavLink to='/women' className='nav-link  mx-3' eventKey="link-1"> WOMEN</NavLink>
+                        <NavLink to='/women' id="off-nav-b" className='nav-link  mx-3' > WOMEN</NavLink>
                     </NavItem>
-                    <div class="vr  text-light"></div>
+                    <div className="vr  text-dark mx-5"></div>
                     <NavItem>
-                        <NavLink to='/men' className='nav-link   mx-3' eventKey="link-2"> MEN</NavLink>
+                        <NavLink to='/men' id="off-nav-b" className=' nav-link  mx-3' > MEN</NavLink>
                     </NavItem>
                     
                 </Nav>
@@ -21,15 +21,14 @@ export default function Offnavi(props){
                 </OffcanvasTitle>
                 </OffcanvasHeader>
                 <OffcanvasBody>
-                    <div className="text-center justify mb-2">
-                        <Row>
-                            <Col xs={3}>Sign in</Col>
-                            <div className="vr"></div>
-                            <Col xs={3}>Join</Col>
+                    <div className=" mb-2">
+                        <Row >
+                            <Col xs={4} className="text-center mx-auto">Sign in</Col>
+                            <Col xs={4}>Join</Col>
                         </Row>
                     </div>
                 <Nav defaultActiveKey="/home" className="flex-column peen">
-                    <Nav.Link href="/home" className=' nav-link text-secondary' ><Person/> My Account</Nav.Link>
+                    <Nav.Link href="#" className=' nav-link text-secondary' ><Person/> My Account</Nav.Link>
                     <Nav.Link eventKey="link-1" className=' nav-link text-secondary'><Box2/> My Orders</Nav.Link>
                     <Nav.Link eventKey="link-2" className=' nav-link text-secondary'><QuestionCircle/> Return Information</Nav.Link>
                     <Nav.Link eventKey="link-3" className=' nav-link text-secondary'> <Messenger/> Contact Prefrence</Nav.Link>

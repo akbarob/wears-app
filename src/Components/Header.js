@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ListGroup,Navbar,NavbarBrand, Nav, NavItem, NavDropdown,Container,InputGroup ,FormControl, Offcanvas, OffcanvasHeader, OffcanvasBody,OffcanvasTitle,Button, Accordion, Row, Col, Modal} from "react-bootstrap";
+import { Image, ListGroup,Navbar,NavbarBrand, Nav, NavItem, NavDropdown,Container,InputGroup ,FormControl, Offcanvas, OffcanvasHeader, OffcanvasBody,OffcanvasTitle,Button, Accordion, Row, Col, Modal} from "react-bootstrap";
 import { Search,Person,Heart,Handbag,List, Messenger, Box2, QuestionCircle, Vr} from "react-bootstrap-icons";
 import {NavLink, Link} from "react-router-dom";
 import Offnavi from "./offnavi";
@@ -19,36 +19,35 @@ export default function Header(){
     }
     return(
         <div>
-            <Navbar bg='dark' fixed="top">
+            <Navbar bg='bar-color' fixed="top" className="bar-color">
                 
                     <Button variant="dark" onClick={handleOffcanvasNav} className='d-lg-none'>
                         <List size={30}/>
                     </Button>
-                    <NavbarBrand href='/' >
-                        <h3 className="brand  px-3">wears</h3>
+                    <NavbarBrand href='/' className="ms-5 my-1">
+                        <Image src="images/wears-Logo4.png" style={{width:"2rem"}} className="pb-2" />
                     </NavbarBrand>
-                    <div className="d-none d-lg-block">
+                    <div className="d-none d-lg-block ">
                     <Nav className="me-auto" >
                         
                         <div className="vr  text-light"></div>
                         <NavItem>
-                        <NavLink to='/women' className='nav-link text-light  px-3'> WOMEN</NavLink>
+                        <NavLink to='/women' className='nav-link text-light  px-3 py-3 m-w'> WOMEN</NavLink>
                         </NavItem>
-                        <div className="vr  text-danger"></div>
-                        
+                        <div className="vr mx-3"></div>                        
                         
                         <NavItem>
-                            <NavLink to='/men' className='nav-link text-light  px-3'> MEN</NavLink>
+                            <NavLink to='/men' className='nav-link text-light  px-3 py-3 m-w'> MEN</NavLink>
                         </NavItem>
                         <div className="vr text-light" ></div>
 
-                        <div className="p-2 mx-5 rounded-pill border bg-light border-0 search col-10 d--block">
+                        <div className="p-2 mx-5 rounded-pill border bg-light border-0  col-10 d-block">
                                 <InputGroup>
                                     <FormControl
                                     size="sm"
                                     placeholder="search for items and brands"
                                     aria-label="search for items and brands"
-                                    className="bg-light border-0 shadow-none col-12"/>
+                                    className="bg-light border-0 shadow-none col-12 rounded-pill"/>
                                      <InputGroup.Text className="bg-light border-0">
                                         <Search size={25}/>
                                     </InputGroup.Text>

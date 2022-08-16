@@ -38,7 +38,11 @@ class Main extends Component{
                 <>
                     <Home
                         Men={this.props.Men.Men}
+                        isLoadingMen={this.props.Men.isLoading}
+                        errMessMen={this.props.Men.errMess}
                         Women={this.props.Women.Women}
+                        errMessWomen={this.props.Women.errMess}
+                        isLoadingWomen={this.props.Women.isLoading}
                     />
                 </>
             )
