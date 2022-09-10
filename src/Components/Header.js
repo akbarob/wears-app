@@ -18,7 +18,8 @@ export default function Header(){
         setShowModal(prevState => !prevState)
     }
     return(
-            <Navbar bg='bar-color' sticky="top" className="bar-color">
+        <div>
+            <Navbar bg='bar-color' fixed="top" className="bar-color">
                 
                     <Button variant="dark" onClick={handleOffcanvasNav} className='d-lg-none'>
                         <List size={30}/>
@@ -90,38 +91,39 @@ export default function Header(){
                     </Nav> 
                         
 
-                    <Offnavi show={showOff} onHide={handleOffcanvasNav} />
-
-                    <Modal show={showModal} onHide={toggleModal}>
-                        <Modal.Body>
-                            <InputGroup>
-                                <FormControl
-                                autoFocus
-                                    size="sm"
-                                    placeholder="search for items and brands"
-                                    aria-label="search for items and brands"
-                                    className="bg-light border-0 shadow-none col-12"/>
-                                    <InputGroup.Text className="bg-light border-0">
-                                    <Search size={25}/>
-                                    </InputGroup.Text>
-                            </InputGroup>
-                        </Modal.Body>
-                        <Row className="pb-2">
-                            <Col className="offset-6">
-                                <Button size="sm" variant="outline-primary" onClick={toggleModal}>
-                                Search
-                                </Button>
-                            </Col>
-                        
-                        <Col>
-                            <Button size="sm" variant="outline-danger" onClick={toggleModal}>
-                                Cancel
-                            </Button>
-                        </Col>
-                        </Row>
-                    </Modal>
+                
             </Navbar>
 
-            
+            <Offnavi show={showOff} onHide={handleOffcanvasNav} />
+
+            <Modal show={showModal} onHide={toggleModal}>
+                <Modal.Body>
+                    <InputGroup>
+                        <FormControl
+                        autoFocus
+                            size="sm"
+                            placeholder="search for items and brands"
+                            aria-label="search for items and brands"
+                            className="bg-light border-0 shadow-none col-12"/>
+                            <InputGroup.Text className="bg-light border-0">
+                            <Search size={25}/>
+                            </InputGroup.Text>
+                    </InputGroup>
+                </Modal.Body>
+                <Row className="pb-2">
+                    <Col className="offset-6">
+                        <Button size="sm" variant="outline-primary" onClick={toggleModal}>
+                        Search
+                        </Button>
+                    </Col>
+                
+                <Col>
+                    <Button size="sm" variant="outline-danger" onClick={toggleModal}>
+                        Cancel
+                    </Button>
+                </Col>
+                </Row>
+            </Modal>
+        </div>
     )
 }

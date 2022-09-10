@@ -42,7 +42,7 @@
     background-color: #010011 !important;
 }
 .header{
-    margin-top: 20px !important;
+    margin-top: 60px !important;
     padding: 20px;
 }
 
@@ -58,6 +58,9 @@
 }
 .nav2{
     background-color: #dbdae5;
+    margin-top: 70px;
+    margin-bottom: 2px;
+
 
 }
 .homebg{
@@ -68,7 +71,7 @@
     height: 25rem;
     width: 100%;
     max-width: 100em;
-    ;}
+    margin-top: 70px !important;}
     .home-button{
         border: 1px solid #010011 !important;
         background-color: rgba(245, 245, 245, 0) !important;
